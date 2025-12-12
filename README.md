@@ -6,5 +6,16 @@
 ![](https://tokei.rs/b1/github/mP1/walkingkooka-environment-expression-function)
 [![J2CL compatible](https://img.shields.io/badge/J2CL-compatible-brightgreen.svg)](https://github.com/mP1/j2cl-central)
 
-# walkingkooka-environment-expression-function-expression-function
+# walkingkooka-environment-expression-function
 ExpressionFunction(s) are extracted to avoid cycles because walkingkooka-tree inherits walkingkooka-environment-expression-function
+
+### [Functions](https://github.com/mP1/walkingkooka-tree/blob/master/src/main/java/walkingkooka/tree/expression/function/ExpressionFunction.java)
+
+Functions that will be useful with terminal session or other similar general environment queries.
+
+- [getEnv](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetEnv.java)
+- [getLocale](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetLocale.java)
+- [getUser](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetUser.java)
+- [setEnv](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionSetEnv.java)
+- [setLocale](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionSetLocale.java)
+- [removeEnv](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionRemoveEnv.java)
