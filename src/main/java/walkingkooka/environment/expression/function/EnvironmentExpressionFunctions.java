@@ -17,57 +17,57 @@
 
 package walkingkooka.environment.expression.function;
 
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.net.email.EmailAddress;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 
 import java.util.Locale;
 
 /**
- * A collection of {@link EnvironmentExpressionEvaluationContext} functions.
+ * A collection of {@link ExpressionEvaluationContext} functions.
  */
 public final class EnvironmentExpressionFunctions implements PublicStaticHelper {
 
     /**
      * {@see EnvironmentExpressionFunctionGetEnv}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> getEnv() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> getEnv() {
         return EnvironmentExpressionFunctionGetEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetLocale}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Locale, C> getLocale() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Locale, C> getLocale() {
         return EnvironmentExpressionFunctionGetLocale.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetUser}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<EmailAddress, C> getUser() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<EmailAddress, C> getUser() {
         return EnvironmentExpressionFunctionGetUser.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetEnv}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
         return EnvironmentExpressionFunctionSetEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionRemoveEnv}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> removeEnv() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> removeEnv() {
         return EnvironmentExpressionFunctionRemoveEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetLocale}
      */
-    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setLocale() {
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setLocale() {
         return EnvironmentExpressionFunctionSetLocale.instance();
     }
 

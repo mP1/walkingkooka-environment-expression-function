@@ -21,15 +21,15 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
-import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 import walkingkooka.util.HasLocaleTesting;
 
 import java.util.Locale;
 
-public final class EnvironmentExpressionFunctionSetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLocale<EnvironmentExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>, Void>
     implements HasLocaleTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetLocale<EnvironmentExpressionEvaluationContext>> {
+    ToStringTesting<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>> {
 
     private final static Locale LOCALE = Locale.forLanguageTag("en-AU");
 
@@ -45,7 +45,7 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
 
     @Test
     public void testApplyWithLocale() {
-        final EnvironmentExpressionEvaluationContext context = this.createContext();
+        final ExpressionEvaluationContext context = this.createContext();
 
         final Locale locale = Locale.FRENCH;
         this.applyAndCheck(
@@ -75,15 +75,15 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
     }
 
     @Override
-    public EnvironmentExpressionEvaluationContext createContext() {
-        return new FakeEnvironmentExpressionEvaluationContext() {
+    public ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext() {
             @Override
             public Locale locale() {
                 return this.locale;
             }
 
             @Override
-            public EnvironmentExpressionEvaluationContext setLocale(final Locale locale) {
+            public ExpressionEvaluationContext setLocale(final Locale locale) {
                 this.locale = locale;
                 return this;
             }
@@ -93,7 +93,7 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetLocale<EnvironmentExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetLocale.class);
     }
 
