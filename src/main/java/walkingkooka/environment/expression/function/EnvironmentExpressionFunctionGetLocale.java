@@ -59,7 +59,8 @@ final class EnvironmentExpressionFunctionGetLocale<C extends EnvironmentExpressi
                         final C context) {
         return LOCALE.getOrFail(
             values,
-            0
+            0,
+            context
         );
     }
 
