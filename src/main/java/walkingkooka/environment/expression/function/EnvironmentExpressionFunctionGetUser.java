@@ -19,7 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.net.email.EmailAddress;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
@@ -28,12 +28,12 @@ import java.util.List;
 /**
  * A function that returns the user querying {@link EnvironmentContext#user()}.
  */
-final class EnvironmentExpressionFunctionGetUser<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<EmailAddress, C> {
+final class EnvironmentExpressionFunctionGetUser<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<EmailAddress, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetUser<C> instance() {
+    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetUser<C> instance() {
         return Cast.to(INSTANCE);
     }
 

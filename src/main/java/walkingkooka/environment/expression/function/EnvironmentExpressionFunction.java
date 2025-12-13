@@ -19,7 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.environment.EnvironmentValueName;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.ExpressionFunctionName;
 import walkingkooka.tree.expression.ExpressionPurityContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
@@ -29,7 +29,7 @@ import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
 import java.util.Optional;
 
-abstract class EnvironmentExpressionFunction<T, C extends EnvironmentExpressionEvaluationContext> implements ExpressionFunction<T, C> {
+abstract class EnvironmentExpressionFunction<T, C extends ExpressionEvaluationContext> implements ExpressionFunction<T, C> {
 
     EnvironmentExpressionFunction(final String name) {
         super();

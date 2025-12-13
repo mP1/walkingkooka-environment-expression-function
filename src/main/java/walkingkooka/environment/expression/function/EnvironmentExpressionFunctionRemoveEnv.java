@@ -20,7 +20,7 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentValueName;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;
@@ -28,12 +28,12 @@ import java.util.List;
 /**
  * A function that removes the {@link EnvironmentValueName}, returning the previous value.
  */
-final class EnvironmentExpressionFunctionRemoveEnv<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Object, C> {
+final class EnvironmentExpressionFunctionRemoveEnv<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Object, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionRemoveEnv<C> instance() {
+    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionRemoveEnv<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -17,13 +17,13 @@
 
 package walkingkooka.environment.expression.function;
 
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.reflect.ClassTesting;
 import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
 
-public abstract class EnvironmentExpressionFunctionTestCase<F extends EnvironmentExpressionFunction<T, EnvironmentExpressionEvaluationContext>, T>
-    implements ExpressionFunctionTesting<F, T, EnvironmentExpressionEvaluationContext>,
+public abstract class EnvironmentExpressionFunctionTestCase<F extends EnvironmentExpressionFunction<T, ExpressionEvaluationContext>, T>
+    implements ExpressionFunctionTesting<F, T, ExpressionEvaluationContext>,
     ClassTesting<F> {
 
     EnvironmentExpressionFunctionTestCase() {

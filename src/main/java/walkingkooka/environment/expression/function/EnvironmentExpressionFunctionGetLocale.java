@@ -19,7 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -31,12 +31,12 @@ import java.util.Locale;
  * A function that returns a {@link Locale}.
  * A converter is expected to handle converting language-tags in String form to a Locale.
  */
-final class EnvironmentExpressionFunctionGetLocale<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
+final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetLocale<C> instance() {
+    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetLocale<C> instance() {
         return Cast.to(INSTANCE);
     }
 

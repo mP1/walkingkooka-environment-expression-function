@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentValueName;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
-import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.util.Optional;
 
-public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetEnv<EnvironmentExpressionEvaluationContext>, Object> {
+public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetEnv<ExpressionEvaluationContext>, Object> {
 
     private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with("var123");
 
@@ -49,7 +49,7 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
     }
 
     @Override
-    public EnvironmentExpressionFunctionSetEnv<EnvironmentExpressionEvaluationContext> createBiFunction() {
+    public EnvironmentExpressionFunctionSetEnv<ExpressionEvaluationContext> createBiFunction() {
         return EnvironmentExpressionFunctionSetEnv.instance();
     }
 
@@ -59,8 +59,8 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
     }
 
     @Override
-    public EnvironmentExpressionEvaluationContext createContext() {
-        return new FakeEnvironmentExpressionEvaluationContext() {
+    public ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext() {
 
             @Override
             public <T> Optional<T> environmentValue(final EnvironmentValueName<T> n) {
@@ -72,7 +72,7 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
             }
 
             @Override
-            public <T> EnvironmentExpressionEvaluationContext setEnvironmentValue(final EnvironmentValueName<T> name,
+            public <T> ExpressionEvaluationContext setEnvironmentValue(final EnvironmentValueName<T> name,
                                                                                   final T value) {
                 checkEquals(VAR, name);
                 checkEquals(VALUE, value);
@@ -88,7 +88,7 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
     // class............................................................................................................
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetEnv<EnvironmentExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetEnv<ExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetEnv.class);
     }
 }

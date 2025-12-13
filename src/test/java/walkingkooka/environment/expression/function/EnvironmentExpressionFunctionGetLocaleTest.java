@@ -21,13 +21,13 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
-import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.util.Locale;
 
-public final class EnvironmentExpressionFunctionGetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLocale<EnvironmentExpressionEvaluationContext>, Locale>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetLocale<EnvironmentExpressionEvaluationContext>> {
+public final class EnvironmentExpressionFunctionGetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>, Locale>
+    implements ToStringTesting<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>> {
 
     private final static Locale LOCALE = Locale.forLanguageTag("en-AU");
 
@@ -63,8 +63,8 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
     }
 
     @Override
-    public EnvironmentExpressionEvaluationContext createContext() {
-        return new FakeEnvironmentExpressionEvaluationContext() {
+    public ExpressionEvaluationContext createContext() {
+        return new FakeExpressionEvaluationContext() {
             @Override
             public Locale locale() {
                 return EnvironmentExpressionFunctionGetLocaleTest.LOCALE;
@@ -73,7 +73,7 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetLocale<EnvironmentExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetLocale.class);
     }
 
