@@ -36,7 +36,7 @@ import java.time.LocalDateTime;
 public final class EnvironmentExpressionFunctionStartup implements PublicStaticHelper {
 
     static {
-        EnvironmentStartup.init();
+        TreeJsonStartup.init();
     }
 
     public static void init() {
