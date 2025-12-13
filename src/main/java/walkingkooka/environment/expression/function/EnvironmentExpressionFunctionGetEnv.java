@@ -64,7 +64,7 @@ final class EnvironmentExpressionFunctionGetEnv<C extends EnvironmentExpressionE
     public Object apply(final List<Object> parameters,
                         final C context) {
 
-        final EnvironmentValueName<?> env = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0, context);
+        final EnvironmentValueName<?> env = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0);
 
         return context.environmentValue(env)
             .orElse(null);
