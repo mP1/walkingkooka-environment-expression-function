@@ -65,8 +65,8 @@ final class EnvironmentExpressionFunctionSetEnv<C extends EnvironmentExpressionE
     public Object apply(final List<Object> parameters,
                         final C context) {
 
-        final EnvironmentValueName<?> env = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0);
-        final Object value = VALUE.getOrFail(parameters, 1);
+        final EnvironmentValueName<?> env = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0, context);
+        final Object value = VALUE.getOrFail(parameters, 1, context);
 
         final Object previous = context.environmentValue(env)
             .orElse(null);

@@ -60,7 +60,8 @@ final class EnvironmentExpressionFunctionSetLocale<C extends EnvironmentExpressi
         context.setLocale(
             LOCALE.getOrFail(
                 values,
-                0
+                0,
+                context
             )
         );
         return null;
