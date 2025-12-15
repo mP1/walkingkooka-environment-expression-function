@@ -20,9 +20,9 @@ package walkingkooka.environment.expression.function;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.net.email.EmailAddress;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
-import walkingkooka.net.email.EmailAddress;
 
 import java.util.Optional;
 

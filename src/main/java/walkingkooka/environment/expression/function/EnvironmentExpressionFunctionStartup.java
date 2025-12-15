@@ -16,18 +16,9 @@
  */
 package walkingkooka.environment.expression.function;
 
-import walkingkooka.collect.set.Sets;
-import walkingkooka.environment.AuditInfo;
-import walkingkooka.environment.EnvironmentStartup;
-import walkingkooka.environment.EnvironmentValueName;
-import walkingkooka.environment.EnvironmentValueNameSet;
-import walkingkooka.environment.MissingEnvironmentValuesException;
-import walkingkooka.net.email.EmailAddress;
 import walkingkooka.reflect.PublicStaticHelper;
 import walkingkooka.tree.json.TreeJsonStartup;
 import walkingkooka.tree.json.marshall.JsonNodeContext;
-
-import java.time.LocalDateTime;
 
 /**
  * Used to force all values types to register their {@link JsonNodeContext#register}
