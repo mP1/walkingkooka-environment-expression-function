@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Miroslav Pokorny (github.com/mP1)
+ * Copyright 2025 Miroslav Pokorny (github.com/mP1)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package walkingkooka.environment.expression.function;
 
 import walkingkooka.collect.set.Sets;
