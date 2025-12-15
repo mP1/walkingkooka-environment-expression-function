@@ -19,8 +19,8 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.net.email.EmailAddress;
+import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 
 import java.util.List;

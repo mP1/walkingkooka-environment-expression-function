@@ -16,7 +16,6 @@
  */
 package walkingkooka.environment.expression.function;
 
-import walkingkooka.environment.*;
 import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.reflect.PublicStaticHelperTesting;
 
