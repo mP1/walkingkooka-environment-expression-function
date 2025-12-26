@@ -28,7 +28,10 @@ import java.util.Optional;
 
 public final class EnvironmentExpressionFunctionRemoveEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionRemoveEnv<ExpressionEvaluationContext>, Object> {
 
-    private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with("var123");
+    private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with(
+        "var123",
+        String.class
+    );
 
     @Test
     public void testApply() {

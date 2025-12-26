@@ -28,7 +28,10 @@ import java.util.Optional;
 
 public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetEnv<ExpressionEvaluationContext>, Object> {
 
-    private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with("var123");
+    private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with(
+        "var123",
+        String.class
+    );
 
     private final static Object VALUE = "value123";
 
