@@ -65,14 +65,19 @@ final class EnvironmentExpressionFunctionSetEnv<C extends ExpressionEvaluationCo
     public Object apply(final List<Object> parameters,
                         final C context) {
 
-        final EnvironmentValueName<?> env = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0);
+        final EnvironmentValueName<?> name = ENVIRONMENT_VALUE_NAME.getOrFail(parameters, 0);
         final Object value = VALUE.getOrFail(parameters, 1);
 
-        final Object previous = context.environmentValue(env)
+        final Object previous = context.environmentValue(name)
             .orElse(null);
         context.setEnvironmentValue(
-            env,
-            Cast.to(value)
+            name,
+            Cast.to(
+                context.convertOrFail(
+                    value,
+                    name.type()
+                )
+            )
         );
         return previous;
     }
