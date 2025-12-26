@@ -19,6 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
+import walkingkooka.Either;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentValueName;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
@@ -28,21 +29,21 @@ import java.util.Optional;
 
 public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetEnv<ExpressionEvaluationContext>, Object> {
 
-    private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with(
+    private final static EnvironmentValueName<?> NAME = EnvironmentValueName.with(
         "var123",
-        String.class
+        Integer.class
     );
 
-    private final static Object VALUE = "value123";
+    private final static Integer VALUE = 123;
 
     @Test
     public void testApply() {
         this.applyAndCheck(
             Lists.of(
-                VAR,
-                VALUE
+                NAME,
+                String.valueOf(VALUE)
             ),
-            VAR.value() + VAR.value()
+            VALUE
         );
 
         this.checkEquals(
@@ -67,21 +68,40 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
 
             @Override
             public <T> Optional<T> environmentValue(final EnvironmentValueName<T> n) {
-                return Optional.of(
-                    Cast.to(
-                        n.value() + n.value()
-                    )
+                checkEquals(
+                    NAME,
+                    n,
+                    "name"
+                );
+
+                return Optional.ofNullable(
+                    NAME.equals(n) ?
+                        Cast.to(
+                            VALUE
+                        ) :
+                        null
                 );
             }
 
             @Override
             public <T> ExpressionEvaluationContext setEnvironmentValue(final EnvironmentValueName<T> name,
                                                                        final T value) {
-                checkEquals(VAR, name);
+                checkEquals(NAME, name);
                 checkEquals(VALUE, value);
 
                 setValue = value;
                 return this;
+            }
+
+            @Override
+            public <T> Either<T, String> convert(final Object value,
+                                                 final Class<T> target) {
+                return this.successfulConversion(
+                    Integer.parseInt(
+                        value.toString()
+                    ),
+                    target
+                );
             }
         };
     }
