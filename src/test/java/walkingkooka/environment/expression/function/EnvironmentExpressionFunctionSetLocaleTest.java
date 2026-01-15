@@ -83,9 +83,8 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
             }
 
             @Override
-            public ExpressionEvaluationContext setLocale(final Locale locale) {
+            public void setLocale(final Locale locale) {
                 this.locale = locale;
-                return this;
             }
 
             private Locale locale = EnvironmentExpressionFunctionSetLocaleTest.LOCALE;
