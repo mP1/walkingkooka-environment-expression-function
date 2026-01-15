@@ -84,13 +84,12 @@ public final class EnvironmentExpressionFunctionSetEnvTest extends EnvironmentEx
             }
 
             @Override
-            public <T> ExpressionEvaluationContext setEnvironmentValue(final EnvironmentValueName<T> name,
-                                                                       final T value) {
+            public <T> void setEnvironmentValue(final EnvironmentValueName<T> name,
+                                                final T value) {
                 checkEquals(NAME, name);
                 checkEquals(VALUE, value);
 
                 setValue = value;
-                return this;
             }
 
             @Override

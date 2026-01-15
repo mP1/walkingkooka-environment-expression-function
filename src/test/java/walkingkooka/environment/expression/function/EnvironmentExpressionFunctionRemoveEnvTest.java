@@ -74,11 +74,10 @@ public final class EnvironmentExpressionFunctionRemoveEnvTest extends Environmen
             }
 
             @Override
-            public ExpressionEvaluationContext removeEnvironmentValue(final EnvironmentValueName<?> name) {
+            public void removeEnvironmentValue(final EnvironmentValueName<?> name) {
                 checkEquals(VAR, name);
 
                 removed = true;
-                return this;
             }
         };
     }
