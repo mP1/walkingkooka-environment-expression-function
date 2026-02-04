@@ -87,6 +87,6 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
 
     @Override
     public int minimumParameterCount() {
-        return 1;
+        return 0;
     }
 }
