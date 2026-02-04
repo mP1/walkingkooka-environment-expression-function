@@ -25,44 +25,44 @@ import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
 
+import java.time.ZoneOffset;
 import java.util.List;
-import java.util.Locale;
 
 /**
- * A function that returns a {@link Locale}.
- * A converter is expected to handle converting language-tags in String form to a Locale or get the current or default
- * from the {@link EnvironmentContext#locale()}.
+ * A function that returns a {@link ZoneOffset}.
+ * A converter is expected to handle converting language-tags in String form to a TimeOffset or get the current or default
+ * from the {@link EnvironmentContext#timeOffset()}.
  */
-final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
+final class EnvironmentExpressionFunctionGetTimeOffset<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<ZoneOffset, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetLocale<C> instance() {
+    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetTimeOffset<C> instance() {
         return Cast.to(INSTANCE);
     }
 
     /**
      * Singleton
      */
-    private final static EnvironmentExpressionFunctionGetLocale<?> INSTANCE = new EnvironmentExpressionFunctionGetLocale<>();
+    private final static EnvironmentExpressionFunctionGetTimeOffset<?> INSTANCE = new EnvironmentExpressionFunctionGetTimeOffset<>();
 
-    private EnvironmentExpressionFunctionGetLocale() {
-        super("getLocale");
+    private EnvironmentExpressionFunctionGetTimeOffset() {
+        super("getTimeOffset");
     }
 
     @Override
-    public Class<Locale> returnType() {
-        return Locale.class;
+    public Class<ZoneOffset> returnType() {
+        return ZoneOffset.class;
     }
 
     @Override
-    public Locale apply(final List<Object> values,
-                        final C context) {
-        return LOCALE.get(
+    public ZoneOffset apply(final List<Object> values,
+                            final C context) {
+        return TIME_OFFSET.get(
             values,
             0
-        ).orElseGet(context::locale);
+        ).orElseGet(context::timeOffset);
     }
 
     /**
@@ -73,19 +73,20 @@ final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluatio
         List<ExpressionFunctionParameter<?>> parameters;
 
         switch (count) {
+            case 0:
             case 1:
                 parameters = PARAMETERS;
                 break;
             default:
-                throw new IllegalArgumentException("Too many parameters");
+                throw new IllegalArgumentException("Missing timeOffset");
         }
 
         return parameters;
     }
 
-    private final ExpressionFunctionParameter<Locale> LOCALE = ExpressionFunctionParameterName.with("locale")
-        .optional(Locale.class)
+    private final ExpressionFunctionParameter<ZoneOffset> TIME_OFFSET = ExpressionFunctionParameterName.with("timeOffset")
+        .optional(ZoneOffset.class)
         .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE);
 
-    private final List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(LOCALE);
+    private final List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(TIME_OFFSET);
 }

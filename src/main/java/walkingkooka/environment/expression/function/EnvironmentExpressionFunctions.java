@@ -22,6 +22,7 @@ import walkingkooka.reflect.PublicStaticHelper;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 
+import java.time.ZoneOffset;
 import java.util.Locale;
 
 /**
@@ -43,6 +44,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
         return EnvironmentExpressionFunctionGetLocale.instance();
     }
 
+    /**
+     * {@see EnvironmentExpressionFunctionGetTimeOffset}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ZoneOffset, C> getTimeOffset() {
+        return EnvironmentExpressionFunctionGetTimeOffset.instance();
+    }
+    
     /**
      * {@see EnvironmentExpressionFunctionGetUser}
      */
