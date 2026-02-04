@@ -78,7 +78,7 @@ final class EnvironmentExpressionFunctionGetTimeOffset<C extends ExpressionEvalu
                 parameters = PARAMETERS;
                 break;
             default:
-                throw new IllegalArgumentException("Missing timeOffset");
+                throw new IllegalArgumentException("Too many parameters");
         }
 
         return parameters;
