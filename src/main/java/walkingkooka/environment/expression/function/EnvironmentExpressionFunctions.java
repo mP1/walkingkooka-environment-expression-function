@@ -72,6 +72,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     }
 
     /**
+     * {@see EnvironmentExpressionFunctionSetTimeOffset}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setTimeOffset() {
+        return EnvironmentExpressionFunctionSetTimeOffset.instance();
+    }
+
+    /**
      * Stop creation
      */
     private EnvironmentExpressionFunctions() {
