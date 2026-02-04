@@ -73,6 +73,7 @@ final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluatio
         List<ExpressionFunctionParameter<?>> parameters;
 
         switch (count) {
+            case 0:
             case 1:
                 parameters = PARAMETERS;
                 break;
