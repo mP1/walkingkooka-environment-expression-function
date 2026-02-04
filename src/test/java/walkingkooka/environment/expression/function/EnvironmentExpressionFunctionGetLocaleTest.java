@@ -42,6 +42,14 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
     }
 
     @Test
+    public void testApplyWithout() {
+        this.applyAndCheck(
+            Lists.empty(),
+            LOCALE
+        );
+    }
+
+    @Test
     public void testApplyWithLocale() {
         this.applyAndCheck(
             Lists.of(LOCALE),

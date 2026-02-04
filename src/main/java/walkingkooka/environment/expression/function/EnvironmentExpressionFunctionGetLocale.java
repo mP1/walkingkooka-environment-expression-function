@@ -19,6 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.EnvironmentContext;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
@@ -29,7 +30,8 @@ import java.util.Locale;
 
 /**
  * A function that returns a {@link Locale}.
- * A converter is expected to handle converting language-tags in String form to a Locale.
+ * A converter is expected to handle converting language-tags in String form to a Locale or get the current or default
+ * from the {@link EnvironmentContext#locale()}.
  */
 final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
 
@@ -57,10 +59,10 @@ final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluatio
     @Override
     public Locale apply(final List<Object> values,
                         final C context) {
-        return LOCALE.getOrFail(
+        return LOCALE.get(
             values,
             0
-        );
+        ).orElseGet(context::locale);
     }
 
     /**
@@ -71,8 +73,6 @@ final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluatio
         List<ExpressionFunctionParameter<?>> parameters;
 
         switch (count) {
-            case 0:
-                throw new IllegalArgumentException("Missing locale");
             case 1:
                 parameters = PARAMETERS;
                 break;
@@ -84,7 +84,7 @@ final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluatio
     }
 
     private final ExpressionFunctionParameter<Locale> LOCALE = ExpressionFunctionParameterName.with("locale")
-        .required(Locale.class)
+        .optional(Locale.class)
         .setKinds(ExpressionFunctionParameterKind.CONVERT_EVALUATE);
 
     private final List<ExpressionFunctionParameter<?>> PARAMETERS = Lists.of(LOCALE);
