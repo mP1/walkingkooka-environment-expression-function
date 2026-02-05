@@ -14,6 +14,7 @@ ExpressionFunction(s) are extracted to avoid cycles because walkingkooka-tree in
 Functions that will be useful with terminal session or other similar general environment queries.
 
 - [getEnv](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetEnv.java)
+- [getLineEnding](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetLineEnding.java)
 - [getLocale](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetLocale.java)
 - [getTimeOffset](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetTimeOffset.java)
 - [getUser](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetUser.java)

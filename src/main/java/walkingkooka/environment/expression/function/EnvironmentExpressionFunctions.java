@@ -19,6 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.net.email.EmailAddress;
 import walkingkooka.reflect.PublicStaticHelper;
+import walkingkooka.text.LineEnding;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 
@@ -37,6 +38,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
         return EnvironmentExpressionFunctionGetEnv.instance();
     }
 
+    /**
+     * {@see EnvironmentExpressionFunctionGetLineEnding}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LineEnding, C> getLineEnding() {
+        return EnvironmentExpressionFunctionGetLineEnding.instance();
+    }
+    
     /**
      * {@see EnvironmentExpressionFunctionGetLocale}
      */
