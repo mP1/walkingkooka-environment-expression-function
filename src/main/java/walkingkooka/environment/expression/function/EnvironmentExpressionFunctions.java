@@ -104,6 +104,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     }
 
     /**
+     * {@see EnvironmentExpressionFunctionSetLineEnding}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setLineEnding() {
+        return EnvironmentExpressionFunctionSetLineEnding.instance();
+    }
+
+    /**
      * {@see EnvironmentExpressionFunctionRemoveEnv}
      */
     public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> removeEnv() {
