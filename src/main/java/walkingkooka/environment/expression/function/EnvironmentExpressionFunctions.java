@@ -23,6 +23,7 @@ import walkingkooka.text.LineEnding;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunction;
 
+import java.nio.charset.Charset;
 import java.time.ZoneOffset;
 import java.util.Locale;
 
@@ -30,6 +31,13 @@ import java.util.Locale;
  * A collection of {@link ExpressionEvaluationContext} functions.
  */
 public final class EnvironmentExpressionFunctions implements PublicStaticHelper {
+
+    /**
+     * {@see EnvironmentExpressionFunctionGetCharset}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Charset, C> getCharset() {
+        return EnvironmentExpressionFunctionGetCharset.instance();
+    }
 
     /**
      * {@see EnvironmentExpressionFunctionGetEnv}
