@@ -104,6 +104,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     }
 
     /**
+     * {@see EnvironmentExpressionFunctionSetIndentation}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setIndentation() {
+        return EnvironmentExpressionFunctionSetIndentation.instance();
+    }
+    
+    /**
      * {@see EnvironmentExpressionFunctionSetLineEnding}
      */
     public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setLineEnding() {
