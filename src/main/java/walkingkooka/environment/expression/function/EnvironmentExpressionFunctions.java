@@ -25,6 +25,7 @@ import walkingkooka.tree.expression.function.ExpressionFunction;
 
 import java.nio.charset.Charset;
 import java.time.ZoneOffset;
+import java.util.Currency;
 import java.util.Locale;
 
 /**
@@ -37,6 +38,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
      */
     public static <C extends ExpressionEvaluationContext> ExpressionFunction<Charset, C> getCharset() {
         return EnvironmentExpressionFunctionGetCharset.instance();
+    }
+
+    /**
+     * {@see EnvironmentExpressionFunctionGetCurrency}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Currency, C> getCurrency() {
+        return EnvironmentExpressionFunctionGetCurrency.instance();
     }
 
     /**
