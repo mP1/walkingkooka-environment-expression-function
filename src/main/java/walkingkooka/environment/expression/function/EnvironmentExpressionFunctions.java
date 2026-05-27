@@ -83,6 +83,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     }
 
     /**
+     * {@see EnvironmentExpressionFunctionSetCharset}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setCharset() {
+        return EnvironmentExpressionFunctionSetCharset.instance();
+    }
+
+    /**
      * {@see EnvironmentExpressionFunctionSetEnv}
      */
     public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
