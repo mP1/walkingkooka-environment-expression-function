@@ -16,6 +16,7 @@ Functions that will be useful with terminal session or other similar general env
 - [getCharset](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetCharset.java)
 - [getCurrency](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetCurrency.java)
 - [getEnv](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetEnv.java)
+- [getIndentation](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetIndentation.java)
 - [getLineEnding](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetLineEnding.java)
 - [getLocale](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetLocale.java)
 - [getTimeOffset](https://github.com/mP1/walkingkooka-environment-expression-function/tree/master/src/main/java/walkingkooka/environment/expression/function/EnvironmentExpressionFunctionGetTimeOffset.java)
