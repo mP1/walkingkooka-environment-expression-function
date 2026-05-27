@@ -90,6 +90,13 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     }
 
     /**
+     * {@see EnvironmentExpressionFunctionSetCurrency}
+     */
+    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setCurrency() {
+        return EnvironmentExpressionFunctionSetCurrency.instance();
+    }
+
+    /**
      * {@see EnvironmentExpressionFunctionSetEnv}
      */
     public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
