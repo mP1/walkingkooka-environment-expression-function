@@ -18,7 +18,6 @@
 package walkingkooka.environment.expression.function;
 
 import walkingkooka.reflect.ClassTesting;
-import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
 
@@ -31,11 +30,6 @@ public abstract class EnvironmentExpressionFunctionTestCase<F extends Environmen
     }
 
     // class............................................................................................................
-
-    @Override
-    public final JavaVisibility typeVisibility() {
-        return JavaVisibility.PACKAGE_PRIVATE;
-    }
 
     @Override
     public String typeNamePrefix() {
