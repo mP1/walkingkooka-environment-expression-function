@@ -17,7 +17,6 @@
 
 package walkingkooka.environment.expression.function;
 
-import walkingkooka.reflect.JavaVisibility;
 import walkingkooka.reflect.PublicStaticHelperTesting;
 
 import java.lang.reflect.Method;
@@ -29,11 +28,6 @@ public final class EnvironmentExpressionFunctionsTest implements PublicStaticHel
     @Override
     public Class<EnvironmentExpressionFunctions> type() {
         return EnvironmentExpressionFunctions.class;
-    }
-
-    @Override
-    public JavaVisibility typeVisibility() {
-        return JavaVisibility.PUBLIC;
     }
 
     @Override
