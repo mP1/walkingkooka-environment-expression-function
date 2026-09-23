@@ -19,10 +19,10 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.reflect.ClassTesting;
 import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.function.ExpressionFunctionTesting;
+import walkingkooka.tree.expression.function.ExpressionFunctionTesting2;
 
 public abstract class EnvironmentExpressionFunctionTestCase<F extends EnvironmentExpressionFunction<T, ExpressionEvaluationContext>, T>
-    implements ExpressionFunctionTesting<F, T, ExpressionEvaluationContext>,
+    implements ExpressionFunctionTesting2<F, T, ExpressionEvaluationContext>,
     ClassTesting<F> {
 
     EnvironmentExpressionFunctionTestCase() {
