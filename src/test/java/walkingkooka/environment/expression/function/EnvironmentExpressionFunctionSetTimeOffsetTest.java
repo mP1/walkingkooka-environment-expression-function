@@ -29,7 +29,7 @@ import java.time.ZoneOffset;
 
 public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetTimeOffset<ExpressionEvaluationContext>, Void>
     implements HasTimeOffsetTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetTimeOffset<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static ZoneOffset TIME_OFFSET = ZoneOffset.ofHours(1);
 

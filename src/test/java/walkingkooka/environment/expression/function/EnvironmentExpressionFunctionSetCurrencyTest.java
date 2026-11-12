@@ -29,7 +29,7 @@ import java.util.Currency;
 
 public final class EnvironmentExpressionFunctionSetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCurrency<ExpressionEvaluationContext>, Void>
     implements HasCurrencyTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetCurrency<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static Currency CURRENCY = Currency.getInstance("AUD");
 

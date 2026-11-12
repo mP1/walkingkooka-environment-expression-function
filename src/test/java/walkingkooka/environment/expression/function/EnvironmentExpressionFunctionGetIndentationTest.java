@@ -26,7 +26,7 @@ import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 public final class EnvironmentExpressionFunctionGetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetIndentation<ExpressionEvaluationContext>, Indentation>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetIndentation<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static Indentation INDENTATION = Indentation.SPACES4;
 

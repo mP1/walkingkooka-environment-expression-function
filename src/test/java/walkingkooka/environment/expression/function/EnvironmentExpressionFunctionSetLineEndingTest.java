@@ -28,7 +28,7 @@ import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 public final class EnvironmentExpressionFunctionSetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLineEnding<ExpressionEvaluationContext>, Void>
     implements HasLineEndingTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetLineEnding<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static LineEnding LINE_ENDING = LineEnding.NL;
 

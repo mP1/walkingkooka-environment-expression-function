@@ -27,7 +27,7 @@ import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 import java.util.Locale;
 
 public final class EnvironmentExpressionFunctionGetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>, Locale>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static Locale LOCALE = Locale.forLanguageTag("en-AU");
 
