@@ -27,7 +27,7 @@ import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 import java.time.ZoneOffset;
 
 public final class EnvironmentExpressionFunctionGetTimeOffsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetTimeOffset<ExpressionEvaluationContext>, ZoneOffset>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetTimeOffset<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static ZoneOffset TIME_OFFSET = ZoneOffset.ofHours(1);
 

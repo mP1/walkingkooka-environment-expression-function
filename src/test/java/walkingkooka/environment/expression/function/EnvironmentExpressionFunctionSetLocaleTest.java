@@ -29,7 +29,7 @@ import java.util.Locale;
 
 public final class EnvironmentExpressionFunctionSetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>, Void>
     implements HasLocaleTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static Locale LOCALE = Locale.forLanguageTag("en-AU");
 

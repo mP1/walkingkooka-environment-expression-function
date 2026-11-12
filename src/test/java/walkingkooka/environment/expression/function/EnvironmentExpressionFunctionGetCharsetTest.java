@@ -28,7 +28,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public final class EnvironmentExpressionFunctionGetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCharset<ExpressionEvaluationContext>, Charset>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetCharset<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static Charset CHARSET = StandardCharsets.UTF_8;
 

@@ -30,7 +30,7 @@ import java.nio.charset.StandardCharsets;
 
 public final class EnvironmentExpressionFunctionSetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCharset<ExpressionEvaluationContext>, Void>
     implements HasCharsetTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetCharset<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static Charset CHARSET = StandardCharsets.UTF_8;
 

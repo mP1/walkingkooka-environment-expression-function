@@ -26,7 +26,7 @@ import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 public final class EnvironmentExpressionFunctionGetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLineEnding<ExpressionEvaluationContext>, LineEnding>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetLineEnding<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static LineEnding LINE_ENDING = LineEnding.CR;
 

@@ -27,7 +27,7 @@ import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 import java.util.Currency;
 
 public final class EnvironmentExpressionFunctionGetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCurrency<ExpressionEvaluationContext>, Currency>
-    implements ToStringTesting<EnvironmentExpressionFunctionGetCurrency<ExpressionEvaluationContext>> {
+    implements ToStringTesting {
 
     private final static Currency CURRENCY = Currency.getInstance("AUD");
 

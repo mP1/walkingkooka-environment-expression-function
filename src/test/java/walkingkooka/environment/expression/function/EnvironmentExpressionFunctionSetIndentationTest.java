@@ -28,7 +28,7 @@ import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 public final class EnvironmentExpressionFunctionSetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetIndentation<ExpressionEvaluationContext>, Void>
     implements HasIndentationTesting,
-    ToStringTesting<EnvironmentExpressionFunctionSetIndentation<ExpressionEvaluationContext>> {
+    ToStringTesting {
 
     private final static Indentation LINE_ENDING = Indentation.SPACES2;
 
