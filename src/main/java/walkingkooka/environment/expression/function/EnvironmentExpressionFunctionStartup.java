@@ -16,17 +16,13 @@
  */
 package walkingkooka.environment.expression.function;
 
+import walkingkooka.environment.EnvironmentStartup;
 import walkingkooka.reflect.PublicStaticHelper;
-import walkingkooka.tree.json.TreeJsonStartup;
-import walkingkooka.tree.json.marshall.JsonNodeContext;
 
-/**
- * Used to force all values types to register their {@link JsonNodeContext#register}
- */
 public final class EnvironmentExpressionFunctionStartup implements PublicStaticHelper {
 
     static {
-        TreeJsonStartup.init();
+        EnvironmentStartup.init();
     }
 
     public static void init() {
