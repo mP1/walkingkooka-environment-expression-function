@@ -19,7 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -30,12 +30,12 @@ import java.util.List;
 /**
  * A function that updates the environment with a new {@link Charset}.
  */
-final class EnvironmentExpressionFunctionSetCharset<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Void, C> {
+final class EnvironmentExpressionFunctionSetCharset<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Void, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionSetCharset<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionSetCharset<C> instance() {
         return Cast.to(INSTANCE);
     }
 

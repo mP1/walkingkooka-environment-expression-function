@@ -21,13 +21,13 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.util.HasLocaleTesting;
 
 import java.util.Locale;
 
-public final class EnvironmentExpressionFunctionSetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLocale<EnvironmentExpressionEvaluationContext>, Void>
     implements HasLocaleTesting,
     ToStringTesting {
 
@@ -45,7 +45,7 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
 
     @Test
     public void testApplyWithLocale() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final Locale locale = Locale.FRENCH;
         this.applyAndCheck(
@@ -75,8 +75,8 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Locale locale() {
                 return this.locale;
@@ -92,7 +92,7 @@ public final class EnvironmentExpressionFunctionSetLocaleTest extends Environmen
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetLocale<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetLocale<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetLocale.class);
     }
 

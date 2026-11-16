@@ -20,7 +20,7 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -32,12 +32,12 @@ import java.util.List;
  * A function that returns a {@link Currency}.
  * A converter is expected to handle converting language-tags in String form to a Currency or get the current from {@link EnvironmentContext#currency()}.
  */
-final class EnvironmentExpressionFunctionGetCurrency<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Currency, C> {
+final class EnvironmentExpressionFunctionGetCurrency<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Currency, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetCurrency<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetCurrency<C> instance() {
         return Cast.to(INSTANCE);
     }
 

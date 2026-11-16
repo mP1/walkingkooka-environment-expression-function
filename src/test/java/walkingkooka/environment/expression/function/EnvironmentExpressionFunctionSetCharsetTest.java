@@ -22,13 +22,13 @@ import walkingkooka.Cast;
 import walkingkooka.HasCharsetTesting;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-public final class EnvironmentExpressionFunctionSetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCharset<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCharset<EnvironmentExpressionEvaluationContext>, Void>
     implements HasCharsetTesting,
     ToStringTesting {
 
@@ -46,7 +46,7 @@ public final class EnvironmentExpressionFunctionSetCharsetTest extends Environme
 
     @Test
     public void testApplyWithCharset() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final Charset charset = StandardCharsets.ISO_8859_1;
         this.applyAndCheck(
@@ -76,8 +76,8 @@ public final class EnvironmentExpressionFunctionSetCharsetTest extends Environme
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Charset charset() {
                 return this.charset;
@@ -93,7 +93,7 @@ public final class EnvironmentExpressionFunctionSetCharsetTest extends Environme
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetCharset<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetCharset<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetCharset.class);
     }
 

@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.text.HasLineEndingTesting;
 import walkingkooka.text.LineEnding;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class EnvironmentExpressionFunctionSetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLineEnding<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetLineEnding<EnvironmentExpressionEvaluationContext>, Void>
     implements HasLineEndingTesting,
     ToStringTesting {
 
@@ -44,7 +44,7 @@ public final class EnvironmentExpressionFunctionSetLineEndingTest extends Enviro
 
     @Test
     public void testApplyWithLineEnding() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final LineEnding lineEnding = LineEnding.CR;
         this.applyAndCheck(
@@ -74,8 +74,9 @@ public final class EnvironmentExpressionFunctionSetLineEndingTest extends Enviro
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
+
             @Override
             public LineEnding lineEnding() {
                 return this.lineEnding;
@@ -91,7 +92,7 @@ public final class EnvironmentExpressionFunctionSetLineEndingTest extends Enviro
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetLineEnding<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetLineEnding<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetLineEnding.class);
     }
 

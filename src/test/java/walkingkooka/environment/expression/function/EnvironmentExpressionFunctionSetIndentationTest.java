@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.text.HasIndentationTesting;
 import walkingkooka.text.Indentation;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class EnvironmentExpressionFunctionSetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetIndentation<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetIndentation<EnvironmentExpressionEvaluationContext>, Void>
     implements HasIndentationTesting,
     ToStringTesting {
 
@@ -44,7 +44,7 @@ public final class EnvironmentExpressionFunctionSetIndentationTest extends Envir
 
     @Test
     public void testApplyWithIndentation() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final Indentation indentation = Indentation.SPACES4;
         this.applyAndCheck(
@@ -74,8 +74,8 @@ public final class EnvironmentExpressionFunctionSetIndentationTest extends Envir
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Indentation indentation() {
                 return this.indentation;
@@ -91,7 +91,7 @@ public final class EnvironmentExpressionFunctionSetIndentationTest extends Envir
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetIndentation<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetIndentation<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetIndentation.class);
     }
 

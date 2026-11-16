@@ -21,11 +21,11 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.text.LineEnding;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class EnvironmentExpressionFunctionGetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLineEnding<ExpressionEvaluationContext>, LineEnding>
+public final class EnvironmentExpressionFunctionGetLineEndingTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLineEnding<EnvironmentExpressionEvaluationContext>, LineEnding>
     implements ToStringTesting {
 
     private final static LineEnding LINE_ENDING = LineEnding.CR;
@@ -72,8 +72,8 @@ public final class EnvironmentExpressionFunctionGetLineEndingTest extends Enviro
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public LineEnding lineEnding() {
                 return EnvironmentExpressionFunctionGetLineEndingTest.LINE_ENDING;
@@ -82,7 +82,7 @@ public final class EnvironmentExpressionFunctionGetLineEndingTest extends Enviro
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetLineEnding<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetLineEnding<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetLineEnding.class);
     }
 

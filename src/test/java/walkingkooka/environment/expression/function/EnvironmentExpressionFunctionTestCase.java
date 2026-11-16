@@ -17,12 +17,12 @@
 
 package walkingkooka.environment.expression.function;
 
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.reflect.ClassTesting;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionTesting2;
 
-public abstract class EnvironmentExpressionFunctionTestCase<F extends EnvironmentExpressionFunction<T, ExpressionEvaluationContext>, T>
-    implements ExpressionFunctionTesting2<F, T, ExpressionEvaluationContext>,
+public abstract class EnvironmentExpressionFunctionTestCase<F extends EnvironmentExpressionFunction<T, EnvironmentExpressionEvaluationContext>, T>
+    implements ExpressionFunctionTesting2<F, T, EnvironmentExpressionEvaluationContext>,
     ClassTesting<F> {
 
     EnvironmentExpressionFunctionTestCase() {

@@ -20,8 +20,8 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.text.LineEnding;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -32,12 +32,12 @@ import java.util.List;
  * A function that returns a {@link LineEnding}.
  * A converter is expected to handle converting language-tags in String form to a LineEnding or get the current from {@link EnvironmentContext#lineEnding()}.
  */
-final class EnvironmentExpressionFunctionGetLineEnding<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<LineEnding, C> {
+final class EnvironmentExpressionFunctionGetLineEnding<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<LineEnding, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetLineEnding<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetLineEnding<C> instance() {
         return Cast.to(INSTANCE);
     }
 

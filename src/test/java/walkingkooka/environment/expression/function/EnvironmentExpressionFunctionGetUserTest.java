@@ -20,13 +20,13 @@ package walkingkooka.environment.expression.function;
 import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.net.email.EmailAddress;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
 import java.util.Optional;
 
-public final class EnvironmentExpressionFunctionGetUserTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetUser<ExpressionEvaluationContext>, EmailAddress> {
+public final class EnvironmentExpressionFunctionGetUserTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetUser<EnvironmentExpressionEvaluationContext>, EmailAddress> {
 
     private final static EmailAddress USER = EmailAddress.parse("test@example.com");
 
@@ -39,7 +39,7 @@ public final class EnvironmentExpressionFunctionGetUserTest extends EnvironmentE
     }
 
     @Override
-    public EnvironmentExpressionFunctionGetUser<ExpressionEvaluationContext> createBiFunction() {
+    public EnvironmentExpressionFunctionGetUser<EnvironmentExpressionEvaluationContext> createBiFunction() {
         return EnvironmentExpressionFunctionGetUser.instance();
     }
 
@@ -49,8 +49,8 @@ public final class EnvironmentExpressionFunctionGetUserTest extends EnvironmentE
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Optional<EmailAddress> user() {
                 return Optional.of(EnvironmentExpressionFunctionGetUserTest.USER);
@@ -61,7 +61,7 @@ public final class EnvironmentExpressionFunctionGetUserTest extends EnvironmentE
     // class............................................................................................................
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetUser<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetUser<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetUser.class);
     }
 }

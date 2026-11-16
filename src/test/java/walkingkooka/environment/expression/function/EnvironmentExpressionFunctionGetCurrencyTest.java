@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.util.Currency;
 
-public final class EnvironmentExpressionFunctionGetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCurrency<ExpressionEvaluationContext>, Currency>
+public final class EnvironmentExpressionFunctionGetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCurrency<EnvironmentExpressionEvaluationContext>, Currency>
     implements ToStringTesting {
 
     private final static Currency CURRENCY = Currency.getInstance("AUD");
@@ -73,8 +73,8 @@ public final class EnvironmentExpressionFunctionGetCurrencyTest extends Environm
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Currency currency() {
                 return EnvironmentExpressionFunctionGetCurrencyTest.CURRENCY;
@@ -83,7 +83,7 @@ public final class EnvironmentExpressionFunctionGetCurrencyTest extends Environm
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetCurrency<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetCurrency<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetCurrency.class);
     }
 
