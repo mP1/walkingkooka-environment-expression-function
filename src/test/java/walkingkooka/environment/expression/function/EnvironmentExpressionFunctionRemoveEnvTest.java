@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentValueName;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.util.Optional;
 
-public final class EnvironmentExpressionFunctionRemoveEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionRemoveEnv<ExpressionEvaluationContext>, Object> {
+public final class EnvironmentExpressionFunctionRemoveEnvTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionRemoveEnv<EnvironmentExpressionEvaluationContext>, Object> {
 
     private final static EnvironmentValueName<?> VAR = EnvironmentValueName.with(
         "var123",
@@ -51,7 +51,7 @@ public final class EnvironmentExpressionFunctionRemoveEnvTest extends Environmen
     }
 
     @Override
-    public EnvironmentExpressionFunctionRemoveEnv<ExpressionEvaluationContext> createBiFunction() {
+    public EnvironmentExpressionFunctionRemoveEnv<EnvironmentExpressionEvaluationContext> createBiFunction() {
         return EnvironmentExpressionFunctionRemoveEnv.instance();
     }
 
@@ -61,8 +61,8 @@ public final class EnvironmentExpressionFunctionRemoveEnvTest extends Environmen
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
 
             @Override
             public <T> Optional<T> environmentValue(final EnvironmentValueName<T> n) {
@@ -87,7 +87,7 @@ public final class EnvironmentExpressionFunctionRemoveEnvTest extends Environmen
     // class............................................................................................................
 
     @Override
-    public Class<EnvironmentExpressionFunctionRemoveEnv<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionRemoveEnv<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionRemoveEnv.class);
     }
 }

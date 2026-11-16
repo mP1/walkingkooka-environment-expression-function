@@ -22,12 +22,12 @@ import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.HasTimeOffsetTesting;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.time.ZoneOffset;
 
-public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetTimeOffset<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetTimeOffset<EnvironmentExpressionEvaluationContext>, Void>
     implements HasTimeOffsetTesting,
     ToStringTesting {
 
@@ -45,7 +45,7 @@ public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends Enviro
 
     @Test
     public void testApplyWithZoneOffset() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final ZoneOffset timeOffset = ZoneOffset.ofHours(2);
 
@@ -76,8 +76,8 @@ public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends Enviro
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public ZoneOffset timeOffset() {
                 return this.timeOffset;
@@ -93,7 +93,7 @@ public final class EnvironmentExpressionFunctionSetTimeOffsetTest extends Enviro
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetTimeOffset<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetTimeOffset<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetTimeOffset.class);
     }
 

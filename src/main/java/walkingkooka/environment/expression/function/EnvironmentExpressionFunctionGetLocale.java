@@ -20,7 +20,7 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -33,12 +33,12 @@ import java.util.Locale;
  * A converter is expected to handle converting language-tags in String form to a Locale or get the current or default
  * from the {@link EnvironmentContext#locale()}.
  */
-final class EnvironmentExpressionFunctionGetLocale<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
+final class EnvironmentExpressionFunctionGetLocale<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Locale, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetLocale<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetLocale<C> instance() {
         return Cast.to(INSTANCE);
     }
 

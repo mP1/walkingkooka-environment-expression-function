@@ -21,13 +21,13 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
-public final class EnvironmentExpressionFunctionGetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCharset<ExpressionEvaluationContext>, Charset>
+public final class EnvironmentExpressionFunctionGetCharsetTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetCharset<EnvironmentExpressionEvaluationContext>, Charset>
     implements ToStringTesting {
 
     private final static Charset CHARSET = StandardCharsets.UTF_8;
@@ -74,8 +74,8 @@ public final class EnvironmentExpressionFunctionGetCharsetTest extends Environme
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Charset charset() {
                 return EnvironmentExpressionFunctionGetCharsetTest.CHARSET;
@@ -84,7 +84,7 @@ public final class EnvironmentExpressionFunctionGetCharsetTest extends Environme
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetCharset<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetCharset<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetCharset.class);
     }
 

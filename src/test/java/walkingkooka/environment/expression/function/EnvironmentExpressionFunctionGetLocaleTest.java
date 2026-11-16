@@ -21,12 +21,12 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.util.Locale;
 
-public final class EnvironmentExpressionFunctionGetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>, Locale>
+public final class EnvironmentExpressionFunctionGetLocaleTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetLocale<EnvironmentExpressionEvaluationContext>, Locale>
     implements ToStringTesting {
 
     private final static Locale LOCALE = Locale.forLanguageTag("en-AU");
@@ -71,8 +71,8 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Locale locale() {
                 return EnvironmentExpressionFunctionGetLocaleTest.LOCALE;
@@ -81,7 +81,7 @@ public final class EnvironmentExpressionFunctionGetLocaleTest extends Environmen
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetLocale<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetLocale<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetLocale.class);
     }
 

@@ -20,8 +20,8 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.text.Indentation;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -32,12 +32,12 @@ import java.util.List;
  * A function that returns a {@link Indentation}.
  * A converter is expected to handle converting language-tags in String form to a Indentation or get the current from {@link EnvironmentContext#indentation()}.
  */
-final class EnvironmentExpressionFunctionGetIndentation<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Indentation, C> {
+final class EnvironmentExpressionFunctionGetIndentation<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Indentation, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetIndentation<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetIndentation<C> instance() {
         return Cast.to(INSTANCE);
     }
 

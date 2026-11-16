@@ -20,7 +20,7 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -32,12 +32,12 @@ import java.util.List;
  * A function that returns a {@link Charset}.
  * A converter is expected to handle converting language-tags in String form to a Charset or get the current from {@link EnvironmentContext#charset()}.
  */
-final class EnvironmentExpressionFunctionGetCharset<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Charset, C> {
+final class EnvironmentExpressionFunctionGetCharset<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Charset, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetCharset<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetCharset<C> instance() {
         return Cast.to(INSTANCE);
     }
 

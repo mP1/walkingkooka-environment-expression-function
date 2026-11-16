@@ -21,11 +21,11 @@ import org.junit.jupiter.api.Test;
 import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 import walkingkooka.text.Indentation;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
 
-public final class EnvironmentExpressionFunctionGetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetIndentation<ExpressionEvaluationContext>, Indentation>
+public final class EnvironmentExpressionFunctionGetIndentationTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionGetIndentation<EnvironmentExpressionEvaluationContext>, Indentation>
     implements ToStringTesting {
 
     private final static Indentation INDENTATION = Indentation.SPACES4;
@@ -72,8 +72,8 @@ public final class EnvironmentExpressionFunctionGetIndentationTest extends Envir
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Indentation indentation() {
                 return EnvironmentExpressionFunctionGetIndentationTest.INDENTATION;
@@ -82,7 +82,7 @@ public final class EnvironmentExpressionFunctionGetIndentationTest extends Envir
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionGetIndentation<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionGetIndentation<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionGetIndentation.class);
     }
 

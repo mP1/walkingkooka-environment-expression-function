@@ -17,6 +17,7 @@
 
 package walkingkooka.environment.expression.function;
 
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.net.email.EmailAddress;
 import walkingkooka.reflect.PublicStaticHelper;
 import walkingkooka.text.Indentation;
@@ -37,112 +38,112 @@ public final class EnvironmentExpressionFunctions implements PublicStaticHelper 
     /**
      * {@see EnvironmentExpressionFunctionGetCharset}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Charset, C> getCharset() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Charset, C> getCharset() {
         return EnvironmentExpressionFunctionGetCharset.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetCurrency}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Currency, C> getCurrency() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Currency, C> getCurrency() {
         return EnvironmentExpressionFunctionGetCurrency.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetEnv}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> getEnv() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> getEnv() {
         return EnvironmentExpressionFunctionGetEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetIndentation}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Indentation, C> getIndentation() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Indentation, C> getIndentation() {
         return EnvironmentExpressionFunctionGetIndentation.instance();
     }
     
     /**
      * {@see EnvironmentExpressionFunctionGetLineEnding}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<LineEnding, C> getLineEnding() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<LineEnding, C> getLineEnding() {
         return EnvironmentExpressionFunctionGetLineEnding.instance();
     }
     
     /**
      * {@see EnvironmentExpressionFunctionGetLocale}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Locale, C> getLocale() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Locale, C> getLocale() {
         return EnvironmentExpressionFunctionGetLocale.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionGetTimeOffset}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<ZoneOffset, C> getTimeOffset() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<ZoneOffset, C> getTimeOffset() {
         return EnvironmentExpressionFunctionGetTimeOffset.instance();
     }
     
     /**
      * {@see EnvironmentExpressionFunctionGetUser}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<EmailAddress, C> getUser() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<EmailAddress, C> getUser() {
         return EnvironmentExpressionFunctionGetUser.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetCharset}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setCharset() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setCharset() {
         return EnvironmentExpressionFunctionSetCharset.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetCurrency}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setCurrency() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setCurrency() {
         return EnvironmentExpressionFunctionSetCurrency.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetEnv}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> setEnv() {
         return EnvironmentExpressionFunctionSetEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetIndentation}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setIndentation() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setIndentation() {
         return EnvironmentExpressionFunctionSetIndentation.instance();
     }
     
     /**
      * {@see EnvironmentExpressionFunctionSetLineEnding}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setLineEnding() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setLineEnding() {
         return EnvironmentExpressionFunctionSetLineEnding.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionRemoveEnv}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Object, C> removeEnv() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Object, C> removeEnv() {
         return EnvironmentExpressionFunctionRemoveEnv.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetLocale}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setLocale() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setLocale() {
         return EnvironmentExpressionFunctionSetLocale.instance();
     }
 
     /**
      * {@see EnvironmentExpressionFunctionSetTimeOffset}
      */
-    public static <C extends ExpressionEvaluationContext> ExpressionFunction<Void, C> setTimeOffset() {
+    public static <C extends EnvironmentExpressionEvaluationContext> ExpressionFunction<Void, C> setTimeOffset() {
         return EnvironmentExpressionFunctionSetTimeOffset.instance();
     }
 

@@ -19,7 +19,7 @@ package walkingkooka.environment.expression.function;
 
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -30,12 +30,12 @@ import java.util.List;
 /**
  * A function that updates the environment's {@link walkingkooka.environment.EnvironmentContext#TIME_OFFSET} with a new {@link java.time.ZoneOffset}.
  */
-final class EnvironmentExpressionFunctionSetTimeOffset<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<Void, C> {
+final class EnvironmentExpressionFunctionSetTimeOffset<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<Void, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionSetTimeOffset<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionSetTimeOffset<C> instance() {
         return Cast.to(INSTANCE);
     }
 

@@ -20,7 +20,7 @@ package walkingkooka.environment.expression.function;
 import walkingkooka.Cast;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.environment.EnvironmentContext;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameter;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterKind;
 import walkingkooka.tree.expression.function.ExpressionFunctionParameterName;
@@ -33,12 +33,12 @@ import java.util.List;
  * A converter is expected to handle converting language-tags in String form to a TimeOffset or get the current or default
  * from the {@link EnvironmentContext#timeOffset()}.
  */
-final class EnvironmentExpressionFunctionGetTimeOffset<C extends ExpressionEvaluationContext> extends EnvironmentExpressionFunction<ZoneOffset, C> {
+final class EnvironmentExpressionFunctionGetTimeOffset<C extends EnvironmentExpressionEvaluationContext> extends EnvironmentExpressionFunction<ZoneOffset, C> {
 
     /**
      * Type-safe getter.
      */
-    static <C extends ExpressionEvaluationContext> EnvironmentExpressionFunctionGetTimeOffset<C> instance() {
+    static <C extends EnvironmentExpressionEvaluationContext> EnvironmentExpressionFunctionGetTimeOffset<C> instance() {
         return Cast.to(INSTANCE);
     }
 

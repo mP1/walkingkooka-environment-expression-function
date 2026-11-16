@@ -22,12 +22,12 @@ import walkingkooka.Cast;
 import walkingkooka.ToStringTesting;
 import walkingkooka.collect.list.Lists;
 import walkingkooka.currency.HasCurrencyTesting;
-import walkingkooka.tree.expression.ExpressionEvaluationContext;
-import walkingkooka.tree.expression.FakeExpressionEvaluationContext;
+import walkingkooka.environment.expression.EnvironmentExpressionEvaluationContext;
+import walkingkooka.environment.expression.FakeEnvironmentExpressionEvaluationContext;
 
 import java.util.Currency;
 
-public final class EnvironmentExpressionFunctionSetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCurrency<ExpressionEvaluationContext>, Void>
+public final class EnvironmentExpressionFunctionSetCurrencyTest extends EnvironmentExpressionFunctionTestCase<EnvironmentExpressionFunctionSetCurrency<EnvironmentExpressionEvaluationContext>, Void>
     implements HasCurrencyTesting,
     ToStringTesting {
 
@@ -45,7 +45,7 @@ public final class EnvironmentExpressionFunctionSetCurrencyTest extends Environm
 
     @Test
     public void testApplyWithCurrency() {
-        final ExpressionEvaluationContext context = this.createContext();
+        final EnvironmentExpressionEvaluationContext context = this.createContext();
 
         final Currency currency = Currency.getInstance("NZD");
         this.applyAndCheck(
@@ -75,8 +75,8 @@ public final class EnvironmentExpressionFunctionSetCurrencyTest extends Environm
     }
 
     @Override
-    public ExpressionEvaluationContext createContext() {
-        return new FakeExpressionEvaluationContext() {
+    public EnvironmentExpressionEvaluationContext createContext() {
+        return new FakeEnvironmentExpressionEvaluationContext() {
             @Override
             public Currency currency() {
                 return this.currency;
@@ -92,7 +92,7 @@ public final class EnvironmentExpressionFunctionSetCurrencyTest extends Environm
     }
 
     @Override
-    public Class<EnvironmentExpressionFunctionSetCurrency<ExpressionEvaluationContext>> type() {
+    public Class<EnvironmentExpressionFunctionSetCurrency<EnvironmentExpressionEvaluationContext>> type() {
         return Cast.to(EnvironmentExpressionFunctionSetCurrency.class);
     }
 
